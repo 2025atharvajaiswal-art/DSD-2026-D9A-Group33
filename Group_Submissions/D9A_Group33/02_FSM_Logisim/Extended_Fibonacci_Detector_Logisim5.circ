@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project source="5.0.0" version="1.0">
+  This file is intended to be loaded by Logisim-evolution v5.0.0.
+  <lib desc="#Wiring" name="0"/>
+  <lib desc="#Gates" name="1"/>
+  <lib desc="#Plexers" name="2"/>
+  <lib desc="#Arithmetic" name="3"/>
+  <lib desc="#FPArithmetic" name="4"/>
+  <lib desc="#Memory" name="5"/>
+  <lib desc="#I/O" name="6"/>
+  <lib desc="#Base" name="7"/>
+  <main name="main"/>
+  <options><a name="gateUndefined" val="ignore"/><a name="simlimit" val="1000"/><a name="simrand" val="0"/></options>
+  <mappings/>
+  <toolbar>
+    <tool lib="7" name="Poke Tool"/><tool lib="7" name="Edit Tool"/><tool lib="7" name="Text Tool"/>
+    <sep/><tool lib="0" name="Pin"/><tool lib="0" name="Pin"><a name="facing" val="west"/><a name="output" val="true"/></tool>
+    <sep/><tool lib="1" name="NOT Gate"/><tool lib="1" name="AND Gate"/><tool lib="1" name="OR Gate"/>
+    <tool lib="1" name="XOR Gate"/><tool lib="1" name="NAND Gate"/><tool lib="1" name="NOR Gate"/>
+    <sep/><tool lib="5" name="D Flip-Flop"/><tool lib="5" name="Register"/>
+  </toolbar>
+
+  <circuit name="main">
+    <a name="circuit" val="main"/>
+    <comp lib="0" loc="(100,100)" name="Pin"><a name="width" val="5"/><a name="label" val="X_in[4:0]"/></comp>
+    <comp lib="5" loc="(260,100)" name="ROM">
+      <a name="addrWidth" val="5"/><a name="dataWidth" val="1"/>
+      <a name="contents">addr/data: 5 1
+1 1 1 1 0 1 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0
+</a><a name="label" val="Fibonacci Comparator"/></comp>
+    <comp lib="0" loc="(520,100)" name="Pin"><a name="output" val="true"/><a name="facing" val="west"/><a name="label" val="FIB_DETECT"/></comp>
+    <wire from="(100,100)" to="(260,110)"/>
+    <wire from="(440,100)" to="(520,100)"/>
+  </circuit>
+  <circuit name="testbench">
+    <a name="circuit" val="testbench"/>
+    <comp lib="0" loc="(100,100)" name="Pin"><a name="width" val="5"/><a name="label" val="X_in"/></comp>
+    <comp lib="5" loc="(260,100)" name="ROM">
+      <a name="addrWidth" val="5"/><a name="dataWidth" val="1"/>
+      <a name="contents">addr/data: 5 1
+1 1 1 1 0 1 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0
+</a><a name="label" val="Expected Fibonacci result"/></comp>
+    <comp lib="0" loc="(520,100)" name="Pin"><a name="output" val="true"/><a name="facing" val="west"/><a name="label" val="EXPECTED_FIB"/></comp>
+    <wire from="(100,100)" to="(260,110)"/>
+    <wire from="(440,100)" to="(520,100)"/>
+  </circuit>
+</project>
