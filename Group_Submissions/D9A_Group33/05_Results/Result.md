@@ -19,7 +19,7 @@
 
 ## 2. Simulation Waveform Evidence
 
-![Vivado Behavioral Simulation Waveform (0–31 Sweep)](Group_Submissions/D9A_Group33/Images/Output.png)
+![Vivado Behavioral Simulation Waveform (0–31 Sweep)](/Group_Submissions/D9A_Group33/Images/Output.png)
 
 *Figure: Vivado `xsim` behavioral simulation waveform of `top_module_tb` sweeping all 32 unsigned decimal inputs (`0`–`31`), showing `fib_led` asserted strictly on `{0, 1, 2, 3, 5, 8, 13, 21}`, `non_fib_led` on the remaining 24 values, `START`/`ACK` state transitions, and `passed = 65` at `1,330.000 ns`.*
 
